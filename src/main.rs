@@ -8,7 +8,7 @@ fn main() {
     println!("\x1b[2J");
 
     loop {
-        // Initialize array b with spaces
+        // fill b array with empty spaces
         b.fill(' ');
 
         for j in (0..628).step_by(7) {
