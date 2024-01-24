@@ -8,13 +8,12 @@ fn main() {
     println!("\x1b[2J");
 
     loop {
-        /* fill b array with empty spaces */
         b.fill(' ');
 
         for j in (0..628).step_by(7) {
-            let j = j as f32 * 0.01;
+            let j = j as f32 +0.07;
             for i in (0..628).step_by(2) {
-                let i = i as f32 * 0.01;
+                let i = i as f32 +0.02;
                 let sini = i.sin();
                 let cosj = j.cos();
                 let sinA = A.sin();
@@ -33,7 +32,7 @@ fn main() {
                 let N = (8.0 * ((sinj * sinA - sini * cosj * cosA) * cosB - sini * cosj * sinA - sinj * cosA - cosi * cosj * sinB)) as usize;
 
                 if y < 22 && y >= 0 && x >= 0 && x < 80 {
-                    if mess > z[o] - 5.0{
+                    if mess > z[o] - 0.5 {
                         z[o] = mess;
                         b[o] = ",-~:;=!*#$@".chars().nth(N.min(8)).unwrap();
                     }
